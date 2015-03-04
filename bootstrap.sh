@@ -40,7 +40,7 @@ if [ -d /vagrant/"$scriptsdirectory"/apacheconf ]; then
 	for filename in /vagrant/"$scriptsdirectory"/apacheconf/*.conf; do
 
 		# No need to copy the example conf file
-		if [ "$filename" != "$exampleconf" && "$filename" != "$examplebedrockconf" ]; then
+		if [[ "$filename" != "$exampleconf" && "$filename" != "$examplebedrockconf" ]]; then
 
 			echo "Copying $filename to /etc/apache2/sites-available/"
     	sudo cp "$filename" /etc/apache2/sites-available/
@@ -121,6 +121,22 @@ if [ ! -f /opt/vagrant_ruby/bin/sass ]; then
 	echo "Installing sass"
 	gem install sass
 fi
+
+
+#####################################################################
+# Install new command for creating roots/bedrock sites              #
+#####################################################################
+echo "Installing new command for creating bedrock projects"
+if [ -f /usr/local/bin/create-bedrock-project ]; then
+	sudo rm /usr/local/bin/create-bedrock-project
+fi
+
+if [ -f /vagrant/"$scriptsdirectory"/commands/create-bedrock-project.sh ]; then
+	sudo cp /vagrant/"$scriptsdirectory"/commands/create-bedrock-project.sh /usr/local/bin/create-bedrock-project
+	sudo chown vagrant:vagrant /usr/local/bin/create-bedrock-project
+	sudo chmod a+x /usr/local/bin/create-bedrock-project
+fi
+
 
 
 #######################
