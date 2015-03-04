@@ -76,16 +76,28 @@ echo "Composer installed"
 
 #######################
 # Install nodejs      #
+# Need to be added	  #
+# like this since     #
+# apt version does    #
+# not work            #
 #######################
-echo "Installing nodejs"
-sudo apt-get -y install nodejs
+echo "Installing nodejs and npm"
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install -y nodejs
+
+#######################
+# Install grunt       #
+#######################
+echo "Installing grunt"
+sudo npm install -g grunt-cli
 
 
 #######################
-# Install npm         #
+# Install SASS        #
 #######################
-echo "Installing node package manager"
-sudo apt-get -y install npm
+sudo gem install sass
+
+
 
 
 #######################
