@@ -5,6 +5,7 @@ scriptsdirectory=scripts
 dbdirectory=db
 
 exampleconf=/vagrant/"$scriptsdirectory"/apacheconf/example.conf
+examplebedrockconf=/vagrant/"$scriptsdirectory"/apacheconf/example_bedrock.conf
 
 config_count=0
 
@@ -39,7 +40,7 @@ if [ -d /vagrant/"$scriptsdirectory"/apacheconf ]; then
 	for filename in /vagrant/"$scriptsdirectory"/apacheconf/*.conf; do
 
 		# No need to copy the example conf file
-		if [ "$filename" != "$exampleconf" ]; then
+		if [ "$filename" != "$exampleconf" && "$filename" != "$examplebedrockconf" ]; then
 
 			echo "Copying $filename to /etc/apache2/sites-available/"
     	sudo cp "$filename" /etc/apache2/sites-available/
