@@ -27,7 +27,9 @@ if [ ! -d /vagrant/"$dbdirectory" ]; then
 	mkdir /vagrant/"$dbdirectory"
 fi
 
-# Copy all virtualhosts to apache's sites directory and activate the site
+###########################################################################
+# Copy all virtualhosts to apache's sites directory and activate the site #
+###########################################################################
 if [ -d /vagrant/"$scriptsdirectory"/apacheconf ]; then
 	for filename in /vagrant/"$scriptsdirectory"/apacheconf/*.conf; do
 
@@ -51,5 +53,43 @@ fi
 echo "Reloading apache configuration"
 sudo service apache2 reload
 
+#####################
+# Install WP-CLI    #
+#####################
+echo "Fetching WP-CLI"
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+echo "Installign WP-CLI"
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+echo "WP-CLI installation done. Use wp on commandline"
+wp --info
+
+
+#######################
+# Install Composer    #
+#######################
+echo "Installing composer"
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+echo "Composer installed"
+
+
+#######################
+# Install nodejs      #
+#######################
+echo "Installing nodejs"
+sudo apt-get -y install nodejs
+
+
+#######################
+# Install npm         #
+#######################
+echo "Installing node package manager"
+sudo apt-get -y install npm
+
+
+#######################
+# DONE                #
+#######################
 echo "Provisioning done!"
 
