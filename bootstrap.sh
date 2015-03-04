@@ -27,7 +27,12 @@ fi
 # Copy all virtualhosts to apache's sites directory and activate the site
 if [ -d /vagrant/"$scriptsdirectory"/apacheconf ]; then
 	for filename in /vagrant/"$scriptsdirectory"/apacheconf/*.conf; do
-    	sudo cp "$filename" /etc/apache2/sites-available/
-    	a2ensite "$filename"
+		
+		# No need to copy the example conf file
+		if [ "$filename" -ne "example.conf" ]; then
+    		sudo cp "$filename" /etc/apache2/sites-available/
+    		a2ensite "$filename"
+    	fi
+    	
 	done
 fi
