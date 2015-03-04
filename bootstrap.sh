@@ -54,7 +54,7 @@ if [ -d /vagrant/"$scriptsdirectory"/apacheconf ]; then
     	config_count=$[config_count + 1]
 
     fi
-
+    
 	done
 fi
 
