@@ -24,11 +24,11 @@
 
 ## DB Connection ##
 For mysql workbench, use:
-SSH Hostname: 192.168.33.20:22
-SSH Username: vagrant
-Mysql Hostname: localhost
-Mysql Server Port: 3306
-Username: root
+* SSH Hostname: 192.168.33.20:22
+* SSH Username: vagrant
+* Mysql Hostname: localhost
+* Mysql Server Port: 3306
+* Username: root
 
 When connecting passwords are: vagrant and root
 
