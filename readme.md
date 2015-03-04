@@ -13,7 +13,7 @@
 - db (db dumps to be imported. Not yet implemented)
 
 
-## Installation of a new site ##
+## Installation of a new site (not roots/bedrock) ##
 1. Copy the scripts/apacheconf/example.conf to mynewsite.conf
 2. Edit mynewsite.conf and replace all references to "example" with "mynewsite"
 3. Download your wp install to the corresponding folder in mynewsite.conf under the www folder. Fex www/mynewsite
@@ -21,6 +21,12 @@
 5. Connect with fex mysql workbench and create a new database for the site. (See db connection section)
 6. Edit your /etc/hosts file (root) and add: 192.168.33.10  mynewsite.dev
 7. Browse to mynewsite.dev and hopefully it will work
+
+
+## Installation of a roots/bedrock site ##
+1. Use "vagrant ssh" to ssh in to the box
+2. Use the command "create-bedrock-project mynewsitename" - this will install a new bedrock project in www
+3. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev
 
 ## DB Connection ##
 For mysql workbench, use:
@@ -31,5 +37,7 @@ For mysql workbench, use:
 * Username: root
 
 When connecting passwords are: vagrant and root
+
+
 
 
