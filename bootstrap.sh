@@ -138,6 +138,20 @@ if [ -f /vagrant/"$scriptsdirectory"/commands/create-bedrock-project.sh ]; then
 fi
 
 
+#####################################################################
+# Install new command for importing databases                       #
+#####################################################################
+echo "Installing new command for importing databases"
+if [ -f /usr/local/bin/import-database ]; then
+	sudo rm /usr/local/bin/import-database
+fi
+
+if [ -f /vagrant/"$scriptsdirectory"/commands/import-database.sh ]; then
+	sudo cp /vagrant/"$scriptsdirectory"/commands/import-database.sh /usr/local/bin/import-database
+	sudo chown vagrant:vagrant /usr/local/bin/import-database
+	sudo chmod a+x /usr/local/bin/import-database
+fi
+
 
 #######################
 # DONE                #
