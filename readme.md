@@ -28,6 +28,12 @@
 2. Use the command "create-bedrock-project mynewsitename" - this will install a new bedrock project in www
 3. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev
 
+
+## Importing db dumps ##
+Use the import-database command. It takes four arguments:
+database-name database-user database-user-password sqldumpfile-to-import
+
+
 ## DB Connection ##
 For mysql workbench, use:
 * SSH Hostname: 192.168.33.20:22
