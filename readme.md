@@ -26,7 +26,10 @@
 ## Installation of a roots/bedrock site ##
 1. Use "vagrant ssh" to ssh in to the box
 2. Use the command "create-bedrock-project mynewsitename" - this will install a new bedrock project in www
-3. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev
+3. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev.
+4. In your new site directory. Edit the .evn file and add the database settings.
+5. Browse to mynewsitename.dev in your favorite browser.
+6. Follow the wp installation instructions.
 
 
 ## Importing db dumps ##
