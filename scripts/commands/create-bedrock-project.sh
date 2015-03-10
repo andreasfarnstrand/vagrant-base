@@ -5,6 +5,9 @@ apacheconfdir=/vagrant/scripts/apacheconf
 apachedir=/etc/apache2/sites-available
 
 if [ ! -d "$webrootdir"/$1 ]; then
+
+	echo "Trying to install a new bedrock project"
+
 	# Create the project
 	composer create-project roots/bedrock "$webrootdir"/$1
 
@@ -19,4 +22,6 @@ if [ ! -d "$webrootdir"/$1 ]; then
 	sudo a2ensite $1
 
 	sudo service apache2 reload
+
+	echo "Bedrock project created and installed"
 fi

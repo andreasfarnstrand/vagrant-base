@@ -126,8 +126,8 @@ fi
 #####################################################################
 # Install new command for creating roots/bedrock sites              #
 #####################################################################
-echo "Installing new command for creating bedrock projects"
 if [ -f /usr/local/bin/create-bedrock-project ]; then
+	echo "Installing new command for creating bedrock projects"
 	sudo rm /usr/local/bin/create-bedrock-project
 fi
 
@@ -141,8 +141,8 @@ fi
 #####################################################################
 # Install new command for importing databases                       #
 #####################################################################
-echo "Installing new command for importing databases"
 if [ -f /usr/local/bin/import-database ]; then
+	echo "Installing new command for importing databases"
 	sudo rm /usr/local/bin/import-database
 fi
 
