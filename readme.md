@@ -19,8 +19,18 @@
 3. Download your wp install to the corresponding folder in mynewsite.conf under the www folder. Fex www/mynewsite
 4. Write command "vagrant halt" and "vagrant up --provision"
 5. Connect with fex mysql workbench and create a new database for the site. (See db connection section)
-6. Edit your /etc/hosts file (root) and add: 192.168.33.10  mynewsite.dev
-7. Browse to mynewsite.dev and hopefully it will work
+6. Add a new user with access and permissions to your new db.
+7. Edit your .env file int the site root.
+DB_NAME=<my-new-db-name>
+DB_USER=<my-new-db-user>
+DB_PASSWORD=<my-new-db-password>
+WP_ENV=development
+WP_HOME=http://<my-new-sitename>.dev
+WP_SITEURL=http://<my-new-sitename>.dev
+Remove DB_HOST os set it to localhost-
+Leave the other parameters unedited.
+8. Edit your /etc/hosts file (root) and add: 192.168.33.10  mynewsite.dev
+9. Browse to mynewsite.dev and hopefully it will work and you can install the new site.
 
 
 ## Installation of a roots/bedrock site ##

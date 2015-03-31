@@ -123,6 +123,24 @@ if [ ! -f /opt/vagrant_ruby/bin/sass ]; then
 fi
 
 
+#######################
+# Install bower       #
+#######################
+if [ ! -f /usr/bin/bower ]; then
+	echo "Installing bower"
+	sudo npm install -g bower
+fi
+
+
+#######################
+# Install gulp        #
+#######################
+if [ ! -f /usr/bin/gulp ]; then
+	echo "Installing gulp"
+	sudo npm install -g gulp
+fi
+
+
 #####################################################################
 # Install new command for creating roots/bedrock sites              #
 #####################################################################
