@@ -19,27 +19,34 @@
 3. Download your wp install to the corresponding folder in mynewsite.conf under the www folder. Fex www/mynewsite
 4. Write command "vagrant halt" and "vagrant up --provision"
 5. Connect with fex mysql workbench and create a new database for the site. (See db connection section)
-6. Add a new user with access and permissions to your new db.
-7. Edit your .env file int the site root.
-DB_NAME=<my-new-db-name>
-DB_USER=<my-new-db-user>
-DB_PASSWORD=<my-new-db-password>
-WP_ENV=development
-WP_HOME=http://<my-new-sitename>.dev
-WP_SITEURL=http://<my-new-sitename>.dev
-Remove DB_HOST os set it to localhost-
-Leave the other parameters unedited.
-8. Edit your /etc/hosts file (root) and add: 192.168.33.10  mynewsite.dev
-9. Browse to mynewsite.dev and hopefully it will work and you can install the new site.
+6. Edit your /etc/hosts file (root) and add: 192.168.33.10  mynewsite.dev
+7. Browse to mynewsite.dev and hopefully it will work and you can install the new site.
 
 
 ## Installation of a roots/bedrock site ##
 1. Use "vagrant ssh" to ssh in to the box
 2. Use the command "create-bedrock-project mynewsitename" - this will install a new bedrock project in www
-3. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev.
-4. In your new site directory. Edit the .evn file and add the database settings.
-5. Browse to mynewsitename.dev in your favorite browser.
-6. Follow the wp installation instructions.
+3. Connect with fex mysql workbench and create a new database for the site. (See db connection section)
+4. Add a new user with access and permissions to your new db.
+5. Edit your .env file int the site root.
+DB_NAME=<my-new-db-name>
+
+DB_USER=<my-new-db-user>
+
+DB_PASSWORD=<my-new-db-password>
+
+WP_ENV=development
+
+WP_HOME=http://<my-new-sitename>.dev
+
+WP_SITEURL=http://<my-new-sitename>.dev
+
+Remove DB_HOST os set it to localhost.
+Leave the other parameters unedited.
+6. Edit your /etc/hosts file and add "192.168.33.10 mynewsitename.dev". Observe that the sitename will automatically have a .dev.
+7. In your new site directory. Edit the .evn file and add the database settings.
+8. Browse to mynewsitename.dev in your favorite browser.
+9. Follow the wp installation instructions.
 
 
 ## Importing db dumps ##
