@@ -29,17 +29,17 @@
 3. Connect with fex mysql workbench and create a new database for the site. (See db connection section)
 4. Add a new user with access and permissions to your new db.
 5. Edit your .env file int the site root.
-DB_NAME=<my-new-db-name>
+    * DB_NAME=my-new-db-name
 
-DB_USER=<my-new-db-user>
+    * DB_USER=my-new-db-user
 
-DB_PASSWORD=<my-new-db-password>
+    * DB_PASSWORD=my-new-db-password
 
-WP_ENV=development
+    * WP_ENV=development
 
-WP_HOME=http://<my-new-sitename>.dev
+    * WP_HOME=http://my-new-sitename.dev
 
-WP_SITEURL=http://<my-new-sitename>.dev
+    * WP_SITEURL=http://my-new-sitename.dev
 
 Remove DB_HOST os set it to localhost.
 Leave the other parameters unedited.
