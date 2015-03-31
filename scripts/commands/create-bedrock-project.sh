@@ -23,5 +23,24 @@ if [ ! -d "$webrootdir"/$1 ]; then
 
 	sudo service apache2 reload
 
+	if [ ! -d /vagrant/tmp ]; then
+		mkdir /vagrant/tmp
+	fi
+
+	if [ -f /vagrant/tmp/master.zip ]; then
+		cd "/vagrant/tmp"
+		rm -f master.zip*
+	fi
+
+	cd "/vagrant/tmp"
+	echo "Fetching sage from github"
+	wget https://github.com/roots/sage/archive/master.zip
+
+	if [ -f /vagrant/tmp/master.zip ]; then
+		cd "$webrootdir"/$1/web/app/themes
+		echo "Unziping sage theme to themes folder"
+		unzip /vagrant/tmp/master.zip
+	fi
+
 	echo "Bedrock project created and installed"
 fi

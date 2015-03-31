@@ -9,6 +9,9 @@ examplebedrockconf=/vagrant/"$scriptsdirectory"/apacheconf/example_bedrock.conf
 
 config_count=0
 
+sudo apt-get update
+sudo apt-get install -y unzip
+
 #############################
 # Create directories needed #
 #############################
