@@ -106,6 +106,9 @@ if [ ! -f /usr/bin/npm ]; then
 	echo "Installing nodejs and npm"
 	curl -sL https://deb.nodesource.com/setup | sudo bash -
 	sudo apt-get install -y nodejs
+
+	echo "Updating npm installation"
+	sudo npm install npm -g
 fi
 
 #######################
