@@ -4,6 +4,7 @@ webdirectory=www
 scriptsdirectory=scripts
 dbdirectory=db
 
+lampconf=/vagrant/"$scriptsdirectory"/apacheconf/lamp.conf
 exampleconf=/vagrant/"$scriptsdirectory"/apacheconf/example.conf
 examplebedrockconf=/vagrant/"$scriptsdirectory"/apacheconf/example_bedrock.conf
 
@@ -20,6 +21,14 @@ sudo apt-get install -y unzip
 if [ ! -d /vagrant/"$webdirectory" ]; then
 	mkdir /vagrant/"$webdirectory"
 fi
+
+# Create index.php with phpinfo in root
+echo "<html>
+				<head><title>Vagrant LAMP</title></head>
+					<body>
+						<p><a href="/phpmyadmin">phpMyAdmin</a></p>
+						<?php phpinfo(); ?>
+					</body>" | sudo tee /vagrant/www/index.php
 
 # Create the forlder for custom scripts
 if [ ! -d /vagrant/"$scriptsdirectory" ]; then
