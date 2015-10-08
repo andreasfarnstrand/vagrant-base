@@ -176,6 +176,13 @@ if [ -f /vagrant/"$scriptsdirectory"/commands/import-database.sh ]; then
 	sudo chmod a+x /usr/local/bin/import-database
 fi
 
+#####################################################################
+# PHP Config   																	                    #
+#####################################################################
+sed -i "s/post_max_size = .*/post_max_size = 500M/" /etc/php5/apache2/php.ini
+sed -i "s/upload_max_filesize = .*/upload_max_filesize = 500M/" /etc/php5/apache2/php.ini
+sudo service apache2 restart
+
 
 #######################
 # DONE                #
