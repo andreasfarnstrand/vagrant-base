@@ -183,7 +183,6 @@ sed -i "s/post_max_size = .*/post_max_size = 500M/" /etc/php5/apache2/php.ini
 sed -i "s/upload_max_filesize = .*/upload_max_filesize = 500M/" /etc/php5/apache2/php.ini
 sudo service apache2 restart
 
-
 #######################
 # DONE                #
 #######################
