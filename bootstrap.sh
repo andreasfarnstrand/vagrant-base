@@ -26,7 +26,7 @@ fi
 echo "<html>
 				<head><title>Vagrant LAMP</title></head>
 					<body>
-						<p><a href="/phpmyadmin">phpMyAdmin</a></p>
+						<p style='text-align: center;'><a href="/phpmyadmin">phpMyAdmin</a></p>
 						<?php phpinfo(); ?>
 					</body>" | sudo tee /vagrant/www/index.php
 
