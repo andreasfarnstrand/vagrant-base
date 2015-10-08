@@ -176,6 +176,8 @@ if [ -f /vagrant/"$scriptsdirectory"/commands/import-database.sh ]; then
 	sudo chmod a+x /usr/local/bin/import-database
 fi
 
+
+
 #####################################################################
 # PHP Config   																	                    #
 #####################################################################
